@@ -13,9 +13,9 @@ export function Input({
   ...props
 }: InputGroupProps) {
   return (
-    <p>
-      <label htmlFor={name}>{label}</label>
-      <input id={name} placeholder={label} {...props} />
+    <p className="flex flex-col">
+      <label htmlFor={name} className="py-4 ">{label}</label>
+      <input id={name} placeholder={label} {...props} className="rounded-md" />
     </p>
   );
 }
@@ -25,9 +25,9 @@ export function TextArea({
   ...props
 }: TextareaProps) {
   return (
-    <p >
-      <label htmlFor={name}>{label}</label>
-      <textarea id={name} placeholder={label} {...props} />
+    <p className="flex flex-col">
+      <label htmlFor={name} className="py-4 ">{label}</label>
+      <textarea id={name} placeholder={label} {...props} className="rounded-md pb-4" />
     </p>
   );
 }

@@ -5,7 +5,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="flex h-screen w-screen">
       <SideNav />
-      {children}
+      <section className="w-4/5 overflow-auto p-8">{children}</section>
     </main>
   );
 };

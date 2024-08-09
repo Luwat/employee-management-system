@@ -1,6 +1,6 @@
 import { Input, TextArea } from "./inputs";
 
-const Form = () => {
+const EmployeeForm = () => {
   return (
     <form action="">
       <Input type="text" label="First Name" name="first-name" />
@@ -26,4 +26,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default EmployeeForm;
