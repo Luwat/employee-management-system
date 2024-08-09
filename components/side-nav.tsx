@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const SideNav = () => {
-  return <section className="h-screen w-1/5 bg-neutral-700 text-neutral-100 p-8 fixed">
+  return <section className="h-screen w-1/5 bg-neutral-700 text-neutral-100 p-8 bg-fixed">
     <div >
         <Link href={'/dashboard'}>
             <h1>Home</h1>
