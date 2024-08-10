@@ -1,7 +1,4 @@
-// "use client";
-
-// import React from "react";
-// import initialEmployees from "@/models/db.json";
+import Employee from "@/components/employee";
 
 type EmployeesData = {
   id: number;
@@ -24,16 +21,10 @@ type EmployeesData = {
 };
 
 const EmployeesPage = async () => {
-  // const [employees, setEmployees] = React.useState<EmployeesData[]>([
-  //   ...initialEmployees,
-  // ]);
-
-  // console.log(employees);
   async function getEmployees() {
     const response = await fetch("http://localhost:3004/employees");
     const data = await response.json();
     return data;
-    // setEmployees(data);
   }
 
   const employees: EmployeesData[] = await getEmployees();
@@ -42,10 +33,8 @@ const EmployeesPage = async () => {
     <div className="w-4/5 p-8">
       <h1>Employees</h1>
       {employees.map((employee) => (
-        <div key={employee.id}>
-          <p>
-            {employee.firstName} {employee.lastName} - {employee.position}
-          </p>
+        <div key={employee.id} className="p-8">
+         <Employee {...employee} />
         </div>
       ))}
     </div>
