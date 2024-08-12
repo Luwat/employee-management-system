@@ -1,25 +1,5 @@
 import Employee from "@/components/employee";
 
-type EmployeesData = {
-  id: number;
-  firstName: string;
-  lastName: string;
-  email: string;
-  address: string;
-  phoneNumber: string;
-  emergencyPhoneNumber: string;
-  bankName: string;
-  bankAccountNumber: string
-  bankAccountName: string;
-  nextOfKin: string;
-  nextOfKinNumber: string;
-  nextOfKinRelationship: string;
-  position: string;
-  startDate: string;
-  dateOfBirth: string;
-  educationLevel: string;
-};
-
 const EmployeesPage = async () => {
   async function getEmployees() {
     const response = await fetch("http://localhost:3004/employees");
