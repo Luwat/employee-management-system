@@ -15,7 +15,7 @@ export function Input({
   return (
     <p className="flex flex-col">
       <label htmlFor={name} className="py-4 ">{label}</label>
-      <input id={name} placeholder={label} {...props} className="rounded-md" />
+      <input id={name} name={name} placeholder={label} {...props} className="rounded-md" />
     </p>
   );
 }
@@ -27,7 +27,7 @@ export function TextArea({
   return (
     <p className="flex flex-col">
       <label htmlFor={name} className="py-4 ">{label}</label>
-      <textarea id={name} placeholder={label} {...props} className="rounded-md pb-4" />
+      <textarea id={name} name={name} placeholder={label} {...props} className="rounded-md pb-4" />
     </p>
   );
 }
