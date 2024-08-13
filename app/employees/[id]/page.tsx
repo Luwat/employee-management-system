@@ -1,6 +1,9 @@
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
+import EmployeeDetails from "@/components/EmployeeDetails";
+import { getEmployee } from "@/lib/data";
 
-export default function EmployeeDetailsPage({ params }: { params: Params }) {
+export default async function EmployeeDetailsPage({ params }: { params: {id: number}}) {
   const { id } = params;
-  return <div>{id} Employee Details Page</div>;
+  const employee = await getEmployee(id);
+
+  return <EmployeeDetails employee={employee}/>;
 }
