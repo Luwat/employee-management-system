@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DeleteEmployeeButton from "./DeleteButton";
 
 export default function Employee({
   id,
@@ -23,7 +24,7 @@ export default function Employee({
       <Link href={`/employees/${id}/edit`}>
         <button>Edit</button>
       </Link>
-      <button>Delete</button>
+      <DeleteEmployeeButton id={id}/>
     </section>
   );
 }

@@ -151,69 +151,6 @@
       "startDate": "2024-01-23",
       "dateOfBirth": "1984-01-03",
       "educationLevel": "Graduate"
-    },
-    {
-      "id": 1723481377560
-    },
-    {
-      "id": 1723481377561
-    },
-    {
-      "firstName": "oluwatobi",
-      "lastName": "oreniyi",
-      "email": "oluwatobioreniyi@gmail.com",
-      "address": "Dutse Alhaji",
-      "phoneNumber": "08092242534",
-      "emergencyPhoneNumber": "08092242534",
-      "bankName": "Access Bank Plc",
-      "bankAccountNumber": "0030072199",
-      "bankAccountName": "Oluwatobi A. Oreniyi",
-      "nextOfKin": "Timothy Emmanuel",
-      "nextOfKinNumber": "07042690742",
-      "nextOfKinRelationship": "Sibling",
-      "position": "Frontend Software Developer",
-      "startDate": "1111-11-11",
-      "dateOfBirth": "0111-11-11",
-      "educationLevel": "Graduate",
-      "id": 1723481377562
-    },
-    {
-      "id": 1723483014271,
-      "firstName": "oluwatobi",
-      "lastName": "oreniyi",
-      "email": "oluwatobioreniyi@gmail.com",
-      "address": "Dutse Alhaji",
-      "phoneNumber": "08092242534",
-      "emergencyPhoneNumber": "08092242534",
-      "bankName": "Access Bank Plc",
-      "bankAccountNumber": "0030072199",
-      "bankAccountName": "Oluwatobi A. Oreniyi",
-      "nextOfKin": "Timothy Emmanuel",
-      "nextOfKinNumber": "07042690742",
-      "nextOfKinRelationship": "Sibling",
-      "position": "Frontend Software Developer",
-      "startDate": "1111-11-11",
-      "dateOfBirth": "0111-11-11",
-      "educationLevel": "Graduate"
-    },
-    {
-      "id": 1723483148999,
-      "firstName": "oluwatobi",
-      "lastName": "oreniyi",
-      "email": "oluwatobioreniyi@gmail.com",
-      "address": "Dutse Alhaji",
-      "phoneNumber": "08092242534",
-      "emergencyPhoneNumber": "08092242534",
-      "bankName": "Access Bank Plc",
-      "bankAccountNumber": "0030072199",
-      "bankAccountName": "Oluwatobi A. Oreniyi",
-      "nextOfKin": "Timothy Emmanuel",
-      "nextOfKinNumber": "07042690742",
-      "nextOfKinRelationship": "Sibling",
-      "position": "Frontend Software Developer",
-      "startDate": "1111-11-11",
-      "dateOfBirth": "0111-11-11",
-      "educationLevel": "Graduate"
     }
   ]
 }

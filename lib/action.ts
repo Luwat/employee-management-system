@@ -47,3 +47,14 @@ export async function updateEmployee(id: number, formData: FormData) {
   revalidatePath("/employees");
   redirect('/employees')
 }
+
+export async function deleteEmployee(id: number) {
+  try {
+    const response = await fetch(`http://localhost:3004/employees/${id}`, {
+      method: "DELETE"
+    });
+  } catch (error: any) {
+    throw new Error(error.message);
+  }
+  revalidatePath("/employees");
+}

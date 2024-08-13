@@ -1,12 +1,7 @@
 import Employee from "@/components/employee";
+import { getEmployees } from "@/lib/data";
 
 const EmployeesPage = async () => {
-  async function getEmployees() {
-    const response = await fetch("http://localhost:3004/employees");
-    const data = await response.json();
-    return data;
-  }
-
   const employees: EmployeesData[] = await getEmployees();
 
   return (
