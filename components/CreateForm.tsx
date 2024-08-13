@@ -3,7 +3,7 @@ import { createEmployee } from "@/lib/action";
 import { Input, TextArea } from "./inputs";
 
 
-const EmployeeForm = () => {
+const CreateEmployeeForm = () => {
 
   return (
     <form action={createEmployee}>
@@ -31,4 +31,4 @@ const EmployeeForm = () => {
   );
 };
 
-export default EmployeeForm;
+export default CreateEmployeeForm;

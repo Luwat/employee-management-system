@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export async function createEmployee(formData: FormData) {
   const newEmployee = {
@@ -23,4 +24,26 @@ export async function createEmployee(formData: FormData) {
   }
 
   revalidatePath("/employees");
+}
+
+export async function updateEmployee(id: number, formData: FormData) {
+  try {
+    const response = await fetch(`http://localhost:3004/employees/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: id,
+        ...Object.fromEntries(formData.entries()),
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+  } catch (error: any) {
+    throw new Error(error.message);
+  }
+
+  revalidatePath("/employees");
+  redirect('/employees')
 }

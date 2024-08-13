@@ -1,5 +1,7 @@
-import EmployeeForm from "@/components/form";
+import EditEmployeeForm from "@/components/EditForm";
+import { getEmployee } from "@/lib/data";
 
-export default function EditEmployeePage() {
-    return <EmployeeForm />
+export default async function EditEmployeePage({ params}: { params: {id: number}}) {
+    const employee  = await getEmployee(params.id)
+    return <EditEmployeeForm employee={employee}/>
 }

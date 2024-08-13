@@ -134,7 +134,23 @@
       "educationLevel": "Graduate"
     },
     {
-      "id": 1723481377559
+      "id": 1723481377559,
+      "firstName": "Olamide",
+      "lastName": "Adeboye",
+      "email": "user@nextmail.com",
+      "address": "Dawaki, Abuja, Nigeria",
+      "phoneNumber": "080934323244",
+      "emergencyPhoneNumber": "080934323244",
+      "bankName": "Access Bank Plc",
+      "bankAccountNumber": "2222222222",
+      "bankAccountName": "Olamide Adeboye",
+      "nextOfKin": "Adeboye Suliat",
+      "nextOfKinNumber": "09033244553",
+      "nextOfKinRelationship": "Spouse",
+      "position": "Backend Software Developer",
+      "startDate": "2024-01-23",
+      "dateOfBirth": "1984-01-03",
+      "educationLevel": "Graduate"
     },
     {
       "id": 1723481377560
