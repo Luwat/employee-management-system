@@ -151,6 +151,25 @@
       "startDate": "2024-01-23",
       "dateOfBirth": "1984-01-03",
       "educationLevel": "Graduate"
+    },
+    {
+      "id": 1723575944668,
+      "firstName": "Favour",
+      "lastName": "Effiong",
+      "email": "heightscouture@gmail.com",
+      "address": "Dawaki, Abuja, Nigeria",
+      "phoneNumber": "07012984474",
+      "emergencyPhoneNumber": "09030188499",
+      "bankName": "Union Bank Plc",
+      "bankAccountNumber": "0067904432",
+      "bankAccountName": "Favour Effiong Ibok",
+      "nextOfKin": "Sandra",
+      "nextOfKinNumber": "08108891100",
+      "nextOfKinRelationship": "Sister",
+      "position": "Frontend Software Developer",
+      "startDate": "2021-02-08",
+      "dateOfBirth": "1998-02-02",
+      "educationLevel": "Graduate"
     }
   ]
 }

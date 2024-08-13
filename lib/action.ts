@@ -18,12 +18,13 @@ export async function createEmployee(formData: FormData) {
       body: JSON.stringify(newEmployee),
     });
     const data = await response.json();
-    console.log(data);
+    return data;
   } catch (error: any) {
     throw new Error(error.message);
   }
 
   revalidatePath("/employees");
+  redirect('/employees')
 }
 
 export async function updateEmployee(id: number, formData: FormData) {
@@ -39,7 +40,7 @@ export async function updateEmployee(id: number, formData: FormData) {
       }),
     });
     const data = await response.json();
-    console.log(data);
+    return data;
   } catch (error: any) {
     throw new Error(error.message);
   }
