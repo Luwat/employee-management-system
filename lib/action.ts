@@ -18,7 +18,7 @@ export async function createEmployee(formData: FormData) {
       body: JSON.stringify(newEmployee),
     });
     const data = await response.json();
-    return data;
+    data;
   } catch (error: any) {
     throw new Error(error.message);
   }
@@ -40,7 +40,7 @@ export async function updateEmployee(id: number, formData: FormData) {
       }),
     });
     const data = await response.json();
-    return data;
+    data;
   } catch (error: any) {
     throw new Error(error.message);
   }
