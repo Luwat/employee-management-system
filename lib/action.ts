@@ -59,3 +59,7 @@ export async function deleteEmployee(id: number) {
   }
   revalidatePath("/employees");
 }
+
+export async function signUp(formData: FormData) {
+
+}
