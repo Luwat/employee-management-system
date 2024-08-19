@@ -2,8 +2,8 @@
   "employees": [
     {
       "id": 1,
-      "firstName": "John",
-      "lastName": "Doe",
+      "firstName": "Johnson",
+      "lastName": "Dowie",
       "email": "john.doe@example.com",
       "address": "No. 1, John Doe Street, Boston MA 021",
       "phoneNumber": "08092243434",
@@ -153,22 +153,22 @@
       "educationLevel": "Graduate"
     },
     {
-      "id": 1723575944668,
-      "firstName": "Favour",
-      "lastName": "Effiong",
-      "email": "heightscouture@gmail.com",
-      "address": "Dawaki, Abuja, Nigeria",
-      "phoneNumber": "07012984474",
-      "emergencyPhoneNumber": "09030188499",
-      "bankName": "Union Bank Plc",
-      "bankAccountNumber": "0067904432",
-      "bankAccountName": "Favour Effiong Ibok",
-      "nextOfKin": "Sandra",
+      "id": 1723810904415,
+      "firstName": "Olusegun",
+      "lastName": "Ademuyiwa",
+      "email": "test@example.com",
+      "address": "Dutse Alhaji",
+      "phoneNumber": "08092242534",
+      "emergencyPhoneNumber": "08092242534",
+      "bankName": "Access Bank Plc",
+      "bankAccountNumber": "0030072199",
+      "bankAccountName": "Olusegun",
+      "nextOfKin": "Timothy Emmanuel",
       "nextOfKinNumber": "08108891100",
-      "nextOfKinRelationship": "Sister",
-      "position": "Frontend Software Developer",
-      "startDate": "2021-02-08",
-      "dateOfBirth": "1998-02-02",
+      "nextOfKinRelationship": "Sibling",
+      "position": "Backend Software Developer",
+      "startDate": "2024-08-01",
+      "dateOfBirth": "2022-02-16",
       "educationLevel": "Graduate"
     }
   ]
