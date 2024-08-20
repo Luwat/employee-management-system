@@ -1,18 +1,30 @@
-import Employee from "@/components/employee";
-import { getEmployees } from "@/lib/data";
+"use client";
 
-const EmployeesPage = async () => {
-  const employees: EmployeesData[] = await getEmployees();
+import Employees from "@/components/employees";
+import Pagination from "@/components/pagination";
+import { useEffect, useState } from "react";
+
+const EmployeesPage = () => {
+  const [employees, setEmployees] = useState<[] | EmployeesData[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [pageSize, setPageSize] = useState<number>(5);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  useEffect(() => {
+    async function fetchEmployees() {
+      setLoading(true);
+      const response = await fetch("http://localhost:3004/employees");
+      const data = await response.json();
+      setEmployees(data);
+      setLoading(false);
+    }
+  });
 
   return (
-    <div className="w-4/5 p-8">
-      <h1>Employees</h1>
-      {employees.map((employee) => (
-        <div key={employee.id} className="p-8">
-         <Employee {...employee} />
-        </div>
-      ))}
-    </div>
+    <section>
+      <Employees employees={employees} loading={loading} />
+      <Pagination pageSize={pageSize} length={employees.length} currentPage={currentPage}/>
+    </section>
   );
 };
 
