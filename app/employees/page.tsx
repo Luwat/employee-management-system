@@ -23,7 +23,6 @@ const EmployeesPage = () => {
       setLoading(true);
       const response = await fetch("http://localhost:3004/employees");
       const data = await response.json();
-      console.log(data);
       setEmployees(data);
       setLoading(false);
     }

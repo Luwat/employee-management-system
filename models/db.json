@@ -2,8 +2,8 @@
   "employees": [
     {
       "id": 1,
-      "firstName": "Johnson",
-      "lastName": "Dowie",
+      "firstName": "John",
+      "lastName": "Doe",
       "email": "john.doe@example.com",
       "address": "No. 1, John Doe Street, Boston MA 021",
       "phoneNumber": "08092243434",
@@ -97,10 +97,10 @@
     },
     {
       "id": 1723481212310,
-      "firstName": "oluwatobi",
-      "lastName": "oreniyi",
+      "firstName": "Oluwatobi",
+      "lastName": "Oreniyi",
       "email": "oluwatobioreniyi@gmail.com",
-      "address": "Dutse Alhaji",
+      "address": "Zone 6, Dutse Alhaji, Abuja",
       "phoneNumber": "08092242534",
       "emergencyPhoneNumber": "08092242534",
       "bankName": "Access Bank Plc",

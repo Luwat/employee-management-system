@@ -5,8 +5,8 @@ const Employees = ({employees, loading}:{employees: EmployeesData[]; loading: bo
         return <p>Loading...</p>
     }
   return (
-    <div className="w-4/5 p-8">
-      <h1>Employees</h1>
+    <div className="w-full p-4 md:p-8">
+      <h1 className="text-center text-2xl">List of Employees</h1>
       {employees.map((employee) => (
         <div key={employee.id} className="p-8">
          <Employee {...employee}/>

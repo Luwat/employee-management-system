@@ -5,7 +5,7 @@ const DeleteEmployeeButton = ({id}: {id: number}) => {
     
   return (
     <form action={deleteEmployee.bind(null, id)}>
-        <button type='submit'>Delete</button>
+        <button className='text-red-700 hover:text-red-900' type='submit'>Delete</button>
     </form>
   )
 }

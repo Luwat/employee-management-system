@@ -1,12 +1,12 @@
 import { signOut } from "@/auth";
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Link from "next/link";
+import Button from "./Button";
 
 const SideNav = () => {
   return (
-    <section className="h-screen w-1/5 bg-neutral-700 text-neutral-100 p-8 bg-fixed">
+    <section className="h-1/6 w-full md:h-screen md:w-1/5 bg-neutral-700 text-neutral-100 p-8 bg-fixed">
       <nav>
-        <ul>
+        <ul className="flex md:flex-col  items-center md:items-start gap-3">
           <li>
             <Link href={"/employees"}>
               <h1>Employees</h1>
@@ -22,9 +22,9 @@ const SideNav = () => {
                 await signOut();
               }}
             >
-              <button className="flex py-2 px-4 bg-neutral-100 text-neutral-700">
-                <div className="">Sign Out</div>
-              </button>
+              <Button className="py-1 px-2  bg-neutral-100 text-neutral-700">
+                Sign Out
+              </Button>
             </form>
           </li>
         </ul>

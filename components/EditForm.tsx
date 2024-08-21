@@ -1,5 +1,7 @@
 import { updateEmployee } from "@/lib/action";
 import { Input, TextArea } from "./inputs";
+import Button from "./Button";
+import Link from "next/link";
 
 
 const EditEmployeeForm = ({employee}: {employee: EmployeesData}) => {
@@ -100,10 +102,12 @@ const EditEmployeeForm = ({employee}: {employee: EmployeesData}) => {
         name="educationLevel"
         defaultValue={employee.educationLevel}
       />
-      <p>
-        {/* <button>Cancel</button> */}
-        <button type="submit">Submit</button>
-      </p>
+      <div className="flex gap-5">
+        < Button type="submit" className="bg-neutral-700 text-neutral-100 hover:text-neutral-300 my-5">Edit Employee</Button>
+        <Link href={"/employees"}>
+          <Button className=" my-5">Cancel</Button>
+        </Link>
+      </div>
     </form>
   );
 };
