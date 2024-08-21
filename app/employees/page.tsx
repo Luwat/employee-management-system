@@ -4,11 +4,19 @@ import Employees from "@/components/employees";
 import Pagination from "@/components/pagination";
 import { useEffect, useState } from "react";
 
+let pageSize = 5;
+
 const EmployeesPage = () => {
   const [employees, setEmployees] = useState<[] | EmployeesData[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [pageSize, setPageSize] = useState<number>(5);
   const [currentPage, setCurrentPage] = useState<number>(1);
+
+  const lastEmployeeIndex = currentPage * pageSize;
+  const firstEmployeeIndex = lastEmployeeIndex - pageSize;
+  const currentEmployees = employees.slice(
+    firstEmployeeIndex,
+    lastEmployeeIndex
+  );
 
   useEffect(() => {
     async function fetchEmployees() {
@@ -20,13 +28,18 @@ const EmployeesPage = () => {
       setLoading(false);
     }
 
-    fetchEmployees()
+    fetchEmployees();
   }, []);
 
   return (
     <section>
-      <Employees employees={employees} loading={loading} />
-      <Pagination pageSize={pageSize} length={employees.length} currentPage={currentPage}/>
+      <Employees employees={currentEmployees} loading={loading} />
+      <Pagination
+        pageSize={pageSize}
+        length={employees.length}
+        currentPage={currentPage}
+        onPageChange={(page: number) => setCurrentPage(page)}
+      />
     </section>
   );
 };

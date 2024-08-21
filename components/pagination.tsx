@@ -4,10 +4,12 @@ const Pagination = ({
   pageSize,
   length,
   currentPage,
+  onPageChange
 }: {
   pageSize: number;
   length: number;
   currentPage: number;
+  onPageChange: (page: number) => void;
 }) => {
   let paginationNumber: number[] = [];
 
@@ -15,17 +17,29 @@ const Pagination = ({
     paginationNumber.push(i);
   }
 
-  if (pageSize < 10 && currentPage === 1) {
+  if (pageSize < 5 && currentPage === 1) {
     return null;
+  }
+
+  const onPrevious = () => {
+    if (currentPage > 1) {
+      onPageChange(currentPage - 1);
+    }
+  }
+
+  const onNext = () => {
+    if (currentPage < paginationNumber.length) {
+      onPageChange(currentPage + 1);
+    }
   }
 
 
 
   return (
-    <ul>
-      {paginationNumber.map((pageNumber) => {
-        return <li key={pageNumber}>{pageNumber}</li>;
-      })}
+    <ul className="flex justify-center">
+      <li onClick={onPrevious}>Prev</li>
+      {currentPage && <li  className="mx-10">{currentPage}</li>}
+      <li onClick={onNext}>Next</li>
     </ul>
   );
 };
