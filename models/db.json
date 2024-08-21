@@ -172,5 +172,13 @@
       "educationLevel": "Graduate"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "firstName": "Oluwatobi",
+      "lastName": "Oreniyi",
+      "email": "test2@example.com",
+      "password": "$2b$10$qgCiQX5lwdO.FvM0bdtkju4GpFTdA0iTsjR3o8xgWP9PP1s5JFtcK",
+      "id": 1
+    }
+  ]
 }

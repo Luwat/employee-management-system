@@ -2,13 +2,17 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import bcrypt from "bcrypt";
 import { z } from "zod";
 
-
 const SignupFormSchema = z.object({
-  name: z
+  firstName: z
     .string()
-    .min(4, { message: "Name must be at least 4 characters" })
+    .min(4, { message: "First name must be at least 4 characters" })
+    .trim(),
+  lastName: z
+    .string()
+    .min(4, { message: "Last name must be at least 4 characters" })
     .trim(),
   email: z.string().email({ message: "Please enter a valid email." }).trim(),
   password: z
@@ -21,7 +25,6 @@ const SignupFormSchema = z.object({
     })
     .trim(),
 });
-
 
 export async function createEmployee(formData: FormData) {
   const newEmployee = {
@@ -44,7 +47,7 @@ export async function createEmployee(formData: FormData) {
   }
 
   revalidatePath("/employees");
-  redirect('/employees')
+  redirect("/employees");
 }
 
 export async function updateEmployee(id: number, formData: FormData) {
@@ -66,13 +69,13 @@ export async function updateEmployee(id: number, formData: FormData) {
   }
 
   revalidatePath("/employees");
-  redirect('/employees')
+  redirect("/employees");
 }
 
 export async function deleteEmployee(id: number) {
   try {
     const response = await fetch(`http://localhost:3004/employees/${id}`, {
-      method: "DELETE"
+      method: "DELETE",
     });
   } catch (error: any) {
     throw new Error(error.message);
@@ -80,3 +83,37 @@ export async function deleteEmployee(id: number) {
   revalidatePath("/employees");
 }
 
+export async function registerUser(formData: FormData) {
+  const { firstName, lastName, email, password } = SignupFormSchema.parse({
+    firstName: formData.get("firstName"),
+    lastName: formData.get("lastName"),
+    email: formData.get("email"),
+    password: formData.get("password")
+  });
+  
+  const salt = await bcrypt.genSalt(10)
+  const hashedPassword = await bcrypt.hash(password, salt)
+
+  try {
+    const response = await fetch("http://localhost:3004/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        password: hashedPassword,
+      }),
+    });
+
+    const user = await response.json();
+    user;
+  } catch (error) {
+    throw new Error("Could not create user");
+  }
+
+  revalidatePath("/");
+  redirect("/login");
+}
