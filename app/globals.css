@@ -17,13 +17,11 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: center/cover no-repeat url('https://thegadgetflow.com/wp-content/uploads/2022/12/Hot-gadgets-for-software-developers-001-768x461.jpeg')
+}
+
+.bg-overlay {
+  background-color: rgba(175, 175, 175, 0.9);
 }
 
 @layer utilities {
