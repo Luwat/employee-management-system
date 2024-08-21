@@ -3,6 +3,8 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import bcrypt from "bcrypt";
+import { signIn } from "@/auth";
+import { AuthError } from "next-auth";
 import { z } from "zod";
 
 const SignupFormSchema = z.object({
@@ -88,11 +90,11 @@ export async function registerUser(formData: FormData) {
     firstName: formData.get("firstName"),
     lastName: formData.get("lastName"),
     email: formData.get("email"),
-    password: formData.get("password")
+    password: formData.get("password"),
   });
-  
-  const salt = await bcrypt.genSalt(10)
-  const hashedPassword = await bcrypt.hash(password, salt)
+
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(password, salt);
 
   try {
     const response = await fetch("http://localhost:3004/users", {
@@ -101,6 +103,7 @@ export async function registerUser(formData: FormData) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        id: email,
         firstName,
         lastName,
         email,
@@ -116,4 +119,20 @@ export async function registerUser(formData: FormData) {
 
   revalidatePath("/");
   redirect("/login");
+}
+
+export async function authenticate(prevState: string | undefined, formData: FormData) {
+  try {
+    await signIn("credentials", formData);
+  } catch (error) {
+    if (error instanceof AuthError) {
+      switch (error.type) {
+        case "CredentialsSignin":
+          return "Invalid credentials.";
+        default:
+          return "Something went wrong.";
+      }
+    }
+    throw error;
+  }
 }

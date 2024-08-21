@@ -1,8 +1,20 @@
+'use client'
+
+import { authenticate } from "@/lib/action";
+import { useActionState } from "react";
+import { useFormState } from "react-dom";
+
 export default function SignIn() {
+  const [errorMessage, formAction, isPending] = useFormState(
+    authenticate,
+    undefined,
+  );
   return (
-    <form action="" className="space-y-3">
-      <div className="flex-1 rounded-
-      lg bg-gray-50 px-6 pb-4 pt-8">
+    <form action={formAction} className="space-y-3">
+      <div
+        className="flex-1 rounded-
+      lg bg-gray-50 px-6 pb-4 pt-8"
+      >
         <h1 className={` mb-3 text-2xl`}>Please log in to continue.</h1>
         <div className="w-full">
           <div>
@@ -42,6 +54,18 @@ export default function SignIn() {
               />
             </div>
           </div>
+        </div>
+        <button type="submit" aria-disabled={isPending}>
+          Login
+        </button>
+        <div
+          className="flex h-8 items-end space-x-1"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          {errorMessage && (
+            <p className="text-sm text-red-500">{errorMessage}</p>
+          )}
         </div>
       </div>
     </form>
