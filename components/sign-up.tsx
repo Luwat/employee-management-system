@@ -3,10 +3,10 @@ import Button from "./Button";
 
 export default function Register() {
   return (
-    <section className="w-full h-[88vh] flex justify-center items-center">
+    <section className="w-full h-[90.8vh] flex justify-center items-center">
       <form
         action={registerUser}
-        className="w-1/4  bg-neutral-100 shadow-2xl shadow-neutral-700 rounded-2xl py-8 flex justify-center items-center"
+        className="w-[90vw] lg:w-2/5 md:w-2/4 xl:w-1/4 bg-neutral-100 shadow-2xl shadow-neutral-700 rounded-2xl py-8 flex justify-center items-center"
         autoComplete="off"
       >
         <div className="">
