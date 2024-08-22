@@ -6,7 +6,7 @@ export default function Register() {
     <section className="w-full h-screen flex justify-center items-center">
       <form
         action={registerUser}
-        className="w-[90vw] lg:w-2/5 md:w-2/4 xl:w-1/4 bg-neutral-100 shadow-2xl shadow-neutral-700 rounded-2xl py-8 flex justify-center items-center"
+        className="w-[90vw] lg:w-2/5 md:w-2/4 xl:w-1/4 bg-neutral-100 shadow-2xl shadow-neutral-700 rounded-2xl py-8 mt-16 flex justify-center items-center"
         autoComplete="off"
       >
         <div className="">
