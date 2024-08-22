@@ -1,7 +1,6 @@
 "use client";
 
 import { authenticate } from "@/lib/action";
-import { Butterfly_Kids } from "next/font/google";
 import { useFormState } from "react-dom";
 import Button from "./Button";
 
