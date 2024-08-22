@@ -37,9 +37,9 @@ const Pagination = ({
 
   return (
     <ul className="flex justify-center">
-      <li onClick={onPrevious}>Prev</li>
+      <li onClick={onPrevious} className={`cursor-pointer ${currentPage === 1? 'text-neutral-600 cursor-default' : ''}`}>Prev</li>
       {currentPage && <li  className="mx-10">{currentPage}</li>}
-      <li onClick={onNext}>Next</li>
+      <li onClick={onNext} className={`cursor-pointer ${currentPage === paginationNumber.length ? 'text-neutral-600 cursor-default' : ''}`}>Next</li>
     </ul>
   );
 };
