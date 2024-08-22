@@ -10,7 +10,7 @@ export default function SignIn() {
     undefined
   );
   return (
-    <section className="flex items-center justify-center h-[90.8vh]">
+    <section className="flex items-center justify-center h-screen">
       <form
         action={formAction}
         className="w-[90vw] lg:w-2/5 md:w-2/4 xl:w-1/4 bg-neutral-100 shadow-2xl shadow-neutral-700 rounded-2xl py-8 flex justify-center items-center"

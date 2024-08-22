@@ -5,7 +5,7 @@ import React from "react";
 const Header = () => {
 
   return (
-    <header className="flex justify-around items-center bg-neutral-700 py-4 text-neutral-100 drop-shadow-lg ">
+    <header className=" fixed w-full flex justify-around items-center bg-neutral-700 py-4 text-neutral-100 drop-shadow-lg ">
       <section className="flex gap-10 items-center">
         <Link href="/">
           <Image src={"/s-logo.png"} alt="" width={40} height={40} />{" "}
