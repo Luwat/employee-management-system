@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const Header = () => {
 
@@ -10,7 +9,7 @@ const Header = () => {
         <Link href="/">
           <Image src={"/s-logo.png"} alt="" width={40} height={40} />{" "}
         </Link>
-        <h1>Sleeky Employee Management System</h1>
+        <h1>Sleeky EMS</h1>
       </section>
       <nav>
         <ul className="flex gap-10">
